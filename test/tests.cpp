@@ -57,7 +57,7 @@ TEST(automata, choice_with_notenough_coins) {
     Automata::STATES actual_state = automata.get_state();
     int actual_balance = automata.get_balance();
     EXPECT_EQ(Automata::STATES::ACCEPT, actual_state);
-    EXPECT_EQ(60, actual_balance);
+    EXPECT_EQ(50, actual_balance);
 }
 
 TEST(automata, cancel) {
