@@ -1,3 +1,5 @@
+// Copyright 2024 Alexander Sidelnikov
+
 #include "Automata.h"
 
 Automata::Automata() {
@@ -15,7 +17,6 @@ Automata::Automata(std::map<std::string, int> menu) {
     for (auto &menu_item : menu) {
         this->menu.insert_or_assign(menu_item.first, menu_item.second);
     }
-    
 }
 
 void Automata::on() {
@@ -41,7 +42,7 @@ void Automata::coin(int amount) {
 }
 
 void Automata::choice(std::string drink_name) {
-    if(menu.find(drink_name) == menu.end()) {
+    if (menu.find(drink_name) == menu.end()) {
         return;
     }
 
@@ -69,7 +70,7 @@ void Automata::finish() {
 }
 
 void Automata::cancel() {
-    if(current_state == Automata::ACCEPT) {
+    if (current_state == Automata::ACCEPT) {
         current_state = Automata::WAIT;
         balance = 0;
     }

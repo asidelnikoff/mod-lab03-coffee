@@ -1,14 +1,15 @@
-#ifndef AUTOMATA_H
-#define AUTOMATA_H
+// Copyright 2024 Alexander Sidelnikov
+
+#ifndef INCLUDE_AUTOMATA_H_
+#define INCLUDE_AUTOMATA_H_
 #endif
 
 #include <map>
 #include <vector>
 #include <string>
 
-class Automata
-{
-public:
+class Automata {
+ public:
     enum STATES {
         OFF,
         WAIT,
@@ -25,9 +26,9 @@ public:
     void cancel();
     STATES get_state();
     Automata();
-    Automata(std::map<std::string, int> menu);
+    explicit Automata(std::map<std::string, int> menu);
 
-private:
+ private:
     std::map<std::string, int> menu;
     STATES current_state;
     int balance;
